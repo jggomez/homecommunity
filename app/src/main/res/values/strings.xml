@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Home Community</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string name="lbl_claims">Observaciones y Reclamos</string>
+    <string name="lbl_news">Noticias</string>
+    <string name="lbl_people">Residentes</string>
+    <string name="lbl_subject">Asunto</string>
+    <string name="lbl_description">Descripción</string>
+    <string name="lbl_send">Enviar</string>
+</resources>
