@@ -10,15 +10,15 @@ import co.devhack.homecommunity.data.entities.ClaimEntity
 interface IClaimDAO {
 
     @Insert
-    fun insert(claimEntity: ClaimEntity)
+    fun insert(claimEntity: ClaimEntity): Long
 
     @Delete
     fun delete(id: Int)
 
-    @Query("Select * From claim order by id asc")
-    fun getAll()
+    @Query("Select * From claim order by date desc")
+    fun getAll(): List<ClaimEntity>
 
     @Query("Select * From claim where id = :id")
-    fun getById(id: Int)
+    fun getById(id: Int): ClaimEntity
 
 }
