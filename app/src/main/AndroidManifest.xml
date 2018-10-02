@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="co.devhack.homecommunity">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -10,18 +14,18 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".presentation.views.MenuActivity"
+            android:name=".presentation.views.menu.MenuActivity"
             android:label="@string/app_name">
 
         </activity>
-        <activity android:name=".presentation.views.ClaimsActivity">
+        <activity android:name=".presentation.views.claims.ClaimsActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".presentation.views.ClaimListActivity">
+        <activity android:name=".presentation.views.claims.ClaimListActivity">
 
         </activity>
     </application>

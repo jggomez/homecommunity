@@ -1,4 +1,4 @@
-package co.devhack.homecommunity.presentation.views
+package co.devhack.homecommunity.presentation.views.menu
 
 import android.os.Bundle
 import android.support.design.widget.NavigationView

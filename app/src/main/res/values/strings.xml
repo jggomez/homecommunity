@@ -12,4 +12,8 @@
     <string name="lbl_subject">Asunto</string>
     <string name="lbl_description">Descripción</string>
     <string name="lbl_send">Enviar</string>
+    <string name="loading">Cargando</string>
+    <string name="lbl_claim_id">El id del reclamo es </string>
+    <string name="lbl_permission">Los permisos son obligatorios para el uso de la appp</string>
+    <string name="lbl_permission_granted">Permisos aceptados</string>
 </resources>

@@ -1,4 +1,4 @@
-package co.devhack.homecommunity.presentation.views
+package co.devhack.homecommunity.presentation.views.claims
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
