@@ -41,10 +41,10 @@ class ClaimDBSource(private val claimDAO: IClaimDAO) {
         }
     }
 
-    fun delete(id: Int): Observable<Boolean> {
+    fun delete(claimEntity: ClaimEntity): Observable<Boolean> {
         return Observable.create {
             try {
-                claimDAO.delete(id)
+                claimDAO.delete(claimEntity)
                 it.onNext(true)
                 it.onComplete()
             } catch (e: Exception) {

@@ -18,4 +18,6 @@ interface IClaimsView {
 
     fun enableViews()
 
+    fun showOptions()
+
 }

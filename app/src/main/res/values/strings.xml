@@ -14,6 +14,12 @@
     <string name="lbl_send">Enviar</string>
     <string name="loading">Cargando</string>
     <string name="lbl_claim_id">El id del reclamo es </string>
-    <string name="lbl_permission">Los permisos son obligatorios para el uso de la appp</string>
+    <string name="lbl_permission">Los permisos son obligatorios para el uso de la app</string>
     <string name="lbl_permission_granted">Permisos aceptados</string>
+    <string name="take_photo">Tomar Foto</string>
+    <string name="select_gallery">Galeria</string>
+    <string name="select_option">Seleccione una opción</string>
+    <string name="wait_please">Espere por favor un momento</string>
+    <string name="img_mandatory">Por favor coloque una imagen</string>
+    <string name="field_required">El campo es obligatorio</string>
 </resources>

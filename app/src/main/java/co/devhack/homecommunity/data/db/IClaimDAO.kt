@@ -13,7 +13,7 @@ interface IClaimDAO {
     fun insert(claimEntity: ClaimEntity): Long
 
     @Delete
-    fun delete(id: Int)
+    fun delete(claimEntity: ClaimEntity)
 
     @Query("Select * From claim order by date desc")
     fun getAll(): List<ClaimEntity>

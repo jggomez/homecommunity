@@ -8,7 +8,7 @@ import co.devhack.homecommunity.data.entities.ClaimEntity
 
 @Database(entities = [(ClaimEntity::class)],
         version = 1)
-abstract class AppDB private constructor() : RoomDatabase() {
+abstract class AppDB : RoomDatabase() {
 
     companion object {
         private var instance: AppDB? = null
@@ -17,7 +17,9 @@ abstract class AppDB private constructor() : RoomDatabase() {
             if (instance == null) {
                 instance = Room.databaseBuilder(context,
                         AppDB::class.java,
-                        "homecommunity-db").build()
+                        "homecommunity-db")
+                        .allowMainThreadQueries()
+                        .build()
             }
 
             return instance

@@ -25,6 +25,9 @@ class ClaimRepository(private val claimDBSource: ClaimDBSource,
             }
 
 
-    override fun delete(id: Int) = claimDBSource.delete(id)
+    override fun delete(id: Int): Observable<Boolean> {
+        return claimDBSource.getById(id)
+                .flatMap { claimDBSource.delete(it) }
+    }
 
 }
