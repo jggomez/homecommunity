@@ -11,6 +11,8 @@ interface IClaimRepository {
 
     fun getById(id: Int): Observable<Claim>
 
-    fun delete(id: Int) : Observable<Boolean>
+    fun deleteAll(): Observable<Boolean>
+
+    fun sync(lstClaims: List<Claim>): Observable<Boolean>
 
 }

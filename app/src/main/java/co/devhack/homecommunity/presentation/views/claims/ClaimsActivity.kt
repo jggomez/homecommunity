@@ -19,6 +19,7 @@ import android.widget.Toast
 import co.devhack.homecommunity.R
 import co.devhack.homecommunity.data.db.AppDB
 import co.devhack.homecommunity.data.entities.mapper.ClaimEntityMapper
+import co.devhack.homecommunity.data.repositories.ClaimCloudSource
 import co.devhack.homecommunity.data.repositories.ClaimDBSource
 import co.devhack.homecommunity.data.repositories.ClaimRepository
 import co.devhack.homecommunity.domain.model.Claim
@@ -67,6 +68,7 @@ class ClaimsActivity : AppCompatActivity(), IClaimsView, Validator.ValidationLis
                                 ClaimDBSource(
                                         AppDB.getInstance(this)!!.ClaimDAO()
                                 ),
+                                ClaimCloudSource(),
                                 ClaimEntityMapper()
                         )
                 ))
@@ -74,10 +76,10 @@ class ClaimsActivity : AppCompatActivity(), IClaimsView, Validator.ValidationLis
         etSubject = findViewById(R.id.txtSubject)
         etDescription = findViewById(R.id.txtDescription)
 
-        requestPermission()
-
         btnSave.isEnabled = false
         btnimg.isEnabled = false
+
+        requestPermission()
 
         btnSave.setOnClickListener { saveClaim() }
 
@@ -93,6 +95,11 @@ class ClaimsActivity : AppCompatActivity(), IClaimsView, Validator.ValidationLis
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setDisplayShowHomeEnabled(true)
+    }
+
+    override fun onDestroy() {
+        presenter.dispose()
+        super.onDestroy()
     }
 
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
@@ -289,7 +296,7 @@ class ClaimsActivity : AppCompatActivity(), IClaimsView, Validator.ValidationLis
 
         val timestamp = SimpleDateFormat("dd/MM/yyyy HH:mm").format(Date())
 
-        val claim = Claim(null, subject, description, type, uriPhoto!!.path, timestamp)
+        val claim = Claim(null, subject, description, type, uriPhoto!!.toString(), timestamp)
 
         presenter.saveClaim(claim)
     }

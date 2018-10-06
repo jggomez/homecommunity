@@ -4,7 +4,7 @@ import android.arch.persistence.room.Database
 import android.arch.persistence.room.Room
 import android.arch.persistence.room.RoomDatabase
 import android.content.Context
-import co.devhack.homecommunity.data.entities.ClaimEntity
+import co.devhack.homecommunity.data.entities.claim.ClaimEntity
 
 @Database(entities = [(ClaimEntity::class)],
         version = 1)

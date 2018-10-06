@@ -1,10 +1,9 @@
 package co.devhack.homecommunity.data.db
 
 import android.arch.persistence.room.Dao
-import android.arch.persistence.room.Delete
 import android.arch.persistence.room.Insert
 import android.arch.persistence.room.Query
-import co.devhack.homecommunity.data.entities.ClaimEntity
+import co.devhack.homecommunity.data.entities.claim.ClaimEntity
 
 @Dao
 interface IClaimDAO {
@@ -12,8 +11,8 @@ interface IClaimDAO {
     @Insert
     fun insert(claimEntity: ClaimEntity): Long
 
-    @Delete
-    fun delete(claimEntity: ClaimEntity)
+    @Query("Delete From Claim")
+    fun deleteAll()
 
     @Query("Select * From claim order by date desc")
     fun getAll(): List<ClaimEntity>

@@ -1,6 +1,6 @@
 package co.devhack.homecommunity.data.entities.mapper
 
-import co.devhack.homecommunity.data.entities.ClaimEntity
+import co.devhack.homecommunity.data.entities.claim.ClaimEntity
 import co.devhack.homecommunity.domain.model.Claim
 
 class ClaimEntityMapper {

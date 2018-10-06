@@ -1,7 +1,7 @@
 package co.devhack.homecommunity.data.repositories
 
 import co.devhack.homecommunity.data.db.IClaimDAO
-import co.devhack.homecommunity.data.entities.ClaimEntity
+import co.devhack.homecommunity.data.entities.claim.ClaimEntity
 import io.reactivex.Observable
 
 class ClaimDBSource(private val claimDAO: IClaimDAO) {
@@ -41,10 +41,10 @@ class ClaimDBSource(private val claimDAO: IClaimDAO) {
         }
     }
 
-    fun delete(claimEntity: ClaimEntity): Observable<Boolean> {
+    fun deleteAll(): Observable<Boolean> {
         return Observable.create {
             try {
-                claimDAO.delete(claimEntity)
+                claimDAO.deleteAll()
                 it.onNext(true)
                 it.onComplete()
             } catch (e: Exception) {

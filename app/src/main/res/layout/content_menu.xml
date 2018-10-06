@@ -10,24 +10,27 @@
     android:layout_margin="16dp">
 
     <Button
+        android:id="@+id/btnOpenClaim"
         style="@style/botonMenu"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_marginBottom="10dp"
         android:layout_weight="1"
         android:drawableTop="@drawable/ic_question_answer"
-        android:layout_marginBottom="10dp"
         android:text="@string/lbl_claims" />
 
     <Button
+        android:id="@+id/btnOpenNews"
         style="@style/botonMenu"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
         android:layout_marginBottom="10dp"
+        android:layout_weight="1"
         android:drawableTop="@drawable/ic_library_books"
         android:text="@string/lbl_news" />
 
     <Button
+        android:id="@+id/btnOpenPeople"
         style="@style/botonMenu"
         android:layout_width="match_parent"
         android:layout_height="0dp"

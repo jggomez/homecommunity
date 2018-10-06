@@ -14,6 +14,10 @@ class ClaimListPresenter(val view: IClaimListView,
         getAllClaimUseCase.execute(AllClaimsObserver())
     }
 
+    fun dispose(){
+        getAllClaimUseCase.dispose()
+    }
+
     inner class AllClaimsObserver : DisposableObserver<List<Claim>>() {
 
         override fun onComplete() {
