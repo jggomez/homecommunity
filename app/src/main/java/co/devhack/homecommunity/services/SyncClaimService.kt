@@ -54,7 +54,5 @@ class SyncClaimService(context: Context, workerParams: WorkerParameters) : Worke
         override fun onError(e: Throwable) {
             Log.e("SynClaimService", e.message)
         }
-
-
     }
 }

@@ -6,7 +6,7 @@ import co.devhack.homecommunity.presentation.views.claims.IClaimListView
 import io.reactivex.observers.DisposableObserver
 
 class ClaimListPresenter(val view: IClaimListView,
-                         val getAllClaimUseCase: GetAllClaimUseCase) {
+                         private val getAllClaimUseCase: GetAllClaimUseCase) {
 
     fun loadClaims() {
         view.showLoading()
@@ -14,7 +14,7 @@ class ClaimListPresenter(val view: IClaimListView,
         getAllClaimUseCase.execute(AllClaimsObserver())
     }
 
-    fun dispose(){
+    fun dispose() {
         getAllClaimUseCase.dispose()
     }
 

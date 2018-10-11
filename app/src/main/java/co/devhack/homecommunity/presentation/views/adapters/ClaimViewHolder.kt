@@ -1,11 +1,11 @@
 package co.devhack.homecommunity.presentation.views.adapters
 
-import android.net.Uri
 import android.support.v7.widget.RecyclerView
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import co.devhack.homecommunity.R
+import co.devhack.homecommunity.util.uri
 import co.devhack.homecommunity.domain.model.Claim
 import com.squareup.picasso.Picasso
 
@@ -23,6 +23,6 @@ class ClaimViewHolder(itemView: View?) : RecyclerView.ViewHolder(itemView) {
         txtType.text = claim.type
         txtDate.text = claim.date
 
-        Picasso.get().load(Uri.parse(claim.uriImage)).fit().centerCrop().into(img)
+        Picasso.get().load(claim.uriImage.uri()).fit().centerCrop().into(img)
     }
 }

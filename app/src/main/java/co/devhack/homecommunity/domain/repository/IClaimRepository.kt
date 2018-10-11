@@ -1,6 +1,8 @@
 package co.devhack.homecommunity.domain.repository
 
 import co.devhack.homecommunity.domain.model.Claim
+import io.reactivex.Flowable
+import io.reactivex.Maybe
 import io.reactivex.Observable
 
 interface IClaimRepository {

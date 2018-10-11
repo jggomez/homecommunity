@@ -1,5 +1,6 @@
 package co.devhack.homecommunity.data.repositories
 
+import co.devhack.homecommunity.util.Constant
 import co.devhack.homecommunity.data.entities.claim.LstClaimEntity
 import co.devhack.homecommunity.data.entities.mapper.ClaimEntityMapper
 import co.devhack.homecommunity.domain.model.Claim
@@ -33,12 +34,12 @@ class ClaimRepository(private val claimDBSource: ClaimDBSource,
 
     override fun sync(lstClaims: List<Claim>): Observable<Boolean> {
         val lstClaimEntity = LstClaimEntity(mapper.reverseMap(lstClaims))
-        return claimCloudSource.add(lstClaimEntity)!!
+        return claimCloudSource.add(lstClaimEntity)
                 .flatMap {
                     val resp = it
                     Observable.create<Boolean> {
 
-                        if (resp.status == 200) {
+                        if (resp.status == Constant.statusOK) {
                             it.onNext(true)
                         } else {
                             it.onNext(false)

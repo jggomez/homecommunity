@@ -7,7 +7,7 @@ import io.reactivex.Observable
 
 class ClaimCloudSource {
 
-    fun add(lstClaimEntity: LstClaimEntity): Observable<ClaimResponseEntity>? {
-        return ServicesFabric.getClaimService()?.add(lstClaimEntity)
+    fun add(lstClaimEntity: LstClaimEntity): Observable<ClaimResponseEntity> {
+        return ServicesFabric.getClaimService().add(lstClaimEntity)
     }
 }

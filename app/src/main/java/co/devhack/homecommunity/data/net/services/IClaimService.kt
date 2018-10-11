@@ -10,4 +10,5 @@ interface IClaimService {
 
     @POST("claims")
     fun add(@Body lstClaimEntity: LstClaimEntity): Observable<ClaimResponseEntity>
+
 }

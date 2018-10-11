@@ -1,20 +1,21 @@
 package co.devhack.homecommunity.data.net
 
+import co.devhack.homecommunity.util.Constant
 import com.google.gson.GsonBuilder
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 
-class RetrofitHelper {
+class RetrofitHelper private constructor() {
 
     companion object {
 
         private var retrofit: Retrofit? = null
 
-        fun getRetrofit(): Retrofit? {
+        fun getRetrofit(): Retrofit {
 
             if (retrofit != null) {
-                return retrofit
+                return retrofit!!
             }
 
             val builder = GsonBuilder()
@@ -22,12 +23,12 @@ class RetrofitHelper {
             val gson = builder.create()
 
             retrofit = Retrofit.Builder()
-                    .baseUrl("https://us-central1-appecommerceworkshop.cloudfunctions.net/")
+                    .baseUrl(Constant.baseURL)
                     .addConverterFactory(GsonConverterFactory.create(gson))
                     .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                     .build()
 
-            return retrofit
+            return retrofit!!
 
         }
     }
